@@ -1,191 +1,194 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-        href="https://fonts.googleapis.com/css2?family=Poppins&display=swap"
-        rel="stylesheet"
-    />
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Sopvia - Portfolio</title>
-    <link rel="stylesheet" href="style.css" />
-    <script src="script.js"></script>
+        <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet"/>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Sopvia - Portfolio</title>
+        <link rel="stylesheet" href="style.css" />
+        <link rel="stylesheet" href="default.css" />
+        <script src="script.js"></script>
     </head>
-    
+
     <body>
-        
-        <div class="container">
-            <section class="welcome center">
-                <div>
-                    <hr class="vertical">
-                    <p id="welcomeBg" class="glitch">Welcome</p>
-                    <button class="arrow" onclick="jump()">&#8964;</button>    
+        <header class="welcome">
+            <div>
+                <h6 id="welcomeBg">Welcome to my Portfolio</h6>
+            </div>
+        </header>
+
+        <nav class="navbar">
+            <div>
+                <h4 id="AboutMeNav">About me</h4>
+                <h4 id="skillsNav">Skills</h4>
+                <h3>Sopvia</h3>
+                <h4 id="projectsNav">Projects</h4>
+                <button class="btn" id="langBtn" onclick="switchLang()">De/En</button>
+            </div>
+        </nav>
+
+        <main>
+            <section class="aboutMe">
+                <div class="content">
+                    <h1 id="aboutMe" class="">About me</h1>
+                    <div class="text">
+                        <p id="intro">Hi, my name is Sophia. I'm currently training to be an IT specialist. At the moment i'm learning Python, Java and GDscript.</p>
+                    </div>
+
+                    <a href="https://github.com/Sopvia" target="_blank">
+                        <img src="img/github.png" alt="Github Logo" class="defaultImg git">
+                    </a>
+                </div>
+
+                <div class="picture">
+                    <img src="https://avatars.githubusercontent.com/u/112272251?v=4" alt="Profilepicture" class="pb"/>
                 </div>
             </section>
-            <section id="content" class="content">
 
-                <div id="controlbar" class="controlbar column">
-                    <button class="closebtn" onclick="closeBar()">&times;</button>
-                    <button class="btn" id="langBtn" onclick="switchLang()">De/En</button>    
-                </div>
-    
-                <button id="openbtn" class="openbtn" onclick="openBar()">&#9776;</button>
-    
-                <div class="main column">
-                    
-                    <div class="main row center">
-                        <div class="bigCard column center">
-                            <div class="topbar row center">
-                                <img src="https://avatars.githubusercontent.com/u/112272251?v=4" alt="" class="pb"/>
-                            </div>
-                
-                            <div class="row aboutMe">
-                                <div class="column">
-                                    <div class="row p-10 center">
-                                        <h1 id="aboutMe" class="">About me</h1>
-                                    </div>
-                                    <div class="row center p-text">
-                                        <p id="intro">Hi, my name is Sophia. I'm currently training to be an IT specialist. At the moment i'm learning Python, Java and GDscript.</p>
-                                    </div>
-                                    <div class="row center p-text m-15">
-                                        <p id="github">Click here for my Github profile.</p>
-                                    </div>
-                                    <div class="row center p-5">
-                                        <a href="https://github.com/Sopvia" target="_blank">
-                                            <img src="img/github.png" alt="Github Logo" class="defaultImg git">
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>    
-                        </div>    
+            <section class="skillOverview">
+                <div class="content">
+                    <div>
+                        <div class="tooltip" data-tooltip="HTML">
+                            <img src="img/html.png" alt="Html Logo" class="defaultImg">
+                        </div>
+                        <div class="tooltip" data-tooltip="CSS">
+                            <img src="img/css.png" alt="CSS Logo" class="defaultImg">
+                        </div>
                     </div>
-                    
-                    <div class="main row center">
-                        <div class="bigCard skillOverview">
-                            <div class="column">
-                                <div class="row">
-                                    <h1 id="skills">My Skills</h1>
-                                </div>
-                                <div class="row center skills">
-                                    <div class="tooltip" data-tooltip="HTML">
-                                        <img src="img/html.png" alt="Html Logo" class="defaultImg">
+                </div>
+                
+                <div class="title">
+                    <h1 id="skills">Skills</h1>
+                </div>
+                
+                <div class="content">
+                    <div>
+                        <div class="tooltip" data-tooltip="JavaScript">
+                            <img src="img/javascript.png" alt="JavaScript Logo" class="defaultImg">
+                        </div>
+                        <div class="tooltip" data-tooltip="Python">
+                            <img src="img/python.png" alt="Python Logo" class="defaultImg">
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="projects">
+                    <div class="title">
+                        <h1 id="projects">Projects</h1>
+                    </div>
+
+                    <div class="slideshow-container content">
+                        <div class="mySlides fade">
+                            <a class="" href="https://github.com/Sopvia/Kaplan" target="_blank">
+                                <div class="border">
+                                    <div class="">
+                                        <div class="title">
+                                            <h3>Kaplan</h3>
+                                            <span class="date">14/07/2024</span> 
+                                        </div>
                                     </div>
-                                    <div class="tooltip" data-tooltip="CSS">
-                                        <img src="img/css.png" alt="CSS Logo" class="defaultImg">
+                                    <hr>
+                                    <div class="text">
+                                        <span id="descKaplan" class="desc">A simple Address Book in python with customtkinter GUI.</span>    
                                     </div>
-                                    <div class="tooltip" data-tooltip="JavaScript">
-                                        <img src="img/javascript.png" alt="JavaScript Logo" class="defaultImg">
-                                    </div>
-                                    <div class="tooltip" data-tooltip="Python">
+                                    <div class="lang">
                                         <img src="img/python.png" alt="Python Logo" class="defaultImg">
                                     </div>
                                 </div>
-                            </div>
+                            </a>
                         </div>
-                    </div>
-                    <div class="main row center">
-                        <div class="bigCard projects">
-                            <div class="column">
-                                <div class="row center">
-                                    <h1 id="projects">Projects</h1>
-                                </div>
-                                <div class="row cards center">
-                                    <a class="card center" href="https://github.com/Sopvia/Kaplan" target="_blank">
-                                        <div class="column">
-                                            <div class="row">
-                                                <div class="lang">
-                                                    <img src="img/python.png" alt="Python Logo" class="defaultImg">
-                                                </div>
-                                                <div class="title">
-                                                    <h3>Kaplan</h3>
-                                                    <span class="date">14/07/2024</span> 
-                                                </div>
-                                            </div>   
-                                            <div class="row text">
-                                                <span id="descKaplan" class="desc">A simple Address Book in python with customtkinter GUI.</span>    
-                                            </div>
-                                        </div>
-                                    </a>
-                                    <hr>
-                                    <a class="card center" href="https://github.com/Sopvia/Sprite" target="_blank">
-                                        <div class="column">
-                                            <div class="row">
-                                                <div class="lang">
-                                                    <img src="img/godot.png" alt="Godot Logo" class="defaultImg">
-                                                </div>
-                                                <div class="title">
-                                                    <h3>Sprite</h3>
-                                                    <span class="date">02/07/2024</span>    
-                                                </div>
-                                            </div>   
-                                            <div class="row text">
-                                                <span id="descSprite" class="desc">A simple 2D Jump 'n' Run game to explore Godot.</span>    
-                                            </div>                                 
-                                        </div>
-                                    </a>
-                                    <hr>
-                                    <a class="card center" href="https://github.com/Sopvia/PY" target="_blank">
-                                        <div class="column">
-                                            <div class="row">
-                                                <div class="lang">
-                                                    <img src="img/python.png" alt="Python Logo" class="defaultImg">
-                                                </div>
-                                                <div class="title">
-                                                    <h3>PY</h3>
-                                                    <span class="date">02/05/2024</span>    
-                                                </div>
-                                            </div>   
-                                            <div class="row text">
-                                                <span id="descPY" class="desc">An ordinary Python Password Generator (but cute).</span>    
-                                            </div>                                 
-                                        </div>
-                                    </a>
-                                    <hr>
-                                    <a class="card center" href="https://github.com/Sopvia/RPS" target="_blank">
-                                        <div class="column">
-                                            <div class="row">
-                                                <div class="lang">
-                                                    <img src="img/python.png" alt="Python Logo" class="defaultImg">
-                                                </div>
-                                                <div class="title">
-                                                    <h3>RPS</h3>
-                                                    <span class="date">26/04/2024</span>    
-                                                </div>
-                                            </div>   
-                                            <div class="row text">
-                                                <span id="descRPS" class="desc">Rock Paper Scissors Game</span>    
-                                            </div>                                 
-                                        </div>
-                                    </a>
-                                    <hr>
-                                    <a class="card center" href="https://github.com/Sopvia/Stopwatch.js" target="_blank">
-                                        <div class="column">
-                                            <div class="row">
-                                                <div class="lang">
-                                                    <img src="img/javascript.png" alt="JavaScript Logo" class="defaultImg">
-                                                </div>
-                                                <div class="title">
-                                                    <h3>Stopwatch.js</h3>
-                                                    <span class="date">14/06/2023</span>    
-                                                </div>
-                                            </div>   
-                                            <div class="row text">
-                                                <span id="descSW" class="desc">Stopwatch in JavaScript</span>    
-                                            </div>                                 
-                                        </div>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>   
 
+                        <div class="mySlides fade">
+                            <a class="" href="https://github.com/Sopvia/Sprite" target="_blank">
+                                <div class="border">
+                                    <div class="">                                   
+                                        <div class="title">
+                                            <h3>Sprite</h3>
+                                            <span class="date">02/07/2024</span>    
+                                        </div>
+                                    </div>
+                                    <hr>
+                                    <div class="text">
+                                        <span id="descSprite" class="desc">A simple 2D Jump 'n' Run game to explore Godot.</span>    
+                                    </div>
+                                    <div class="lang">
+                                        <img src="img/godot.png" alt="Godot Logo" class="defaultImg">
+                                    </div>           
+                                </div>                      
+                            </a>
+                        </div>
+
+                        <div class="mySlides fade">
+                            <a class="" href="https://github.com/Sopvia/PY" target="_blank">
+                                <div class="border">
+                                    <div class="">
+                                        <div class="title">
+                                            <h3>PY</h3>
+                                            <span class="date">02/05/2024</span>    
+                                        </div>
+                                    </div>   
+                                    <hr>
+                                    <div class="text">
+                                        <span id="descPY" class="desc">An ordinary Python Password Generator (but cute).</span>    
+                                    </div>
+                                    <div class="lang">
+                                        <img src="img/python.png" alt="Python Logo" class="defaultImg">
+                                    </div>     
+                                </div>                            
+                            </a>
+                        </div>
+
+                        <div class="mySlides fade">
+                            <a class="" href="https://github.com/Sopvia/RPS" target="_blank">
+                                <div class="border">
+                                    <div class="">
+                                        <div class="title">
+                                            <h3>RPS</h3>
+                                            <span class="date">26/04/2024</span>    
+                                        </div>
+                                    </div>   
+                                    <hr>
+                                    <div class="text">
+                                        <span id="descRPS" class="desc">Rock Paper Scissors Game</span>    
+                                    </div>          
+                                    <div class="lang">
+                                        <img src="img/python.png" alt="Python Logo" class="defaultImg">
+                                    </div>        
+                                </div>               
+                            </a>
+                        </div>
+
+                        <div class="mySlides fade">
+                            <a class="" href="https://github.com/Sopvia/Stopwatch.js" target="_blank">
+                                <div class="border">
+                                    <div class="">
+                                        <div class="title">
+                                            <h3>Stopwatch.js</h3>
+                                            <span class="date">14/06/2023</span>    
+                                        </div>
+                                    </div>   
+                                    <hr>
+                                    <div class="text">
+                                        <span id="descSW" class="desc">Stopwatch in JavaScript</span>    
+                                    </div>
+                                    <div class="lang">
+                                        <img src="img/javascript.png" alt="JavaScript Logo" class="defaultImg">
+                                    </div>           
+                                </div>                      
+                            </a>
+                        </div>
+
+                        <div class="controls">
+                            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+                        </div>
+                    </div>
             </section>
-        </div>
-
+        </main>
     </body>
-</hmtl>
+</html>

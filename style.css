@@ -1,572 +1,346 @@
 :root {
-  --backgroundColor: #111111;
-  --backgroundSecond: rgb(48, 0, 58);
-  --fontColor: white;
+  --backgroundColor: #FFE9EC;
+  --backgroundSecond: #66021F;
+  --fontColor: #0B1215;
   --dateColor: #eeee;
-  --topbarColor: #131313;
-  --accentColor: #e91e63;
-  --tooltipColor: #E4FF1A;
-  --card-bg: white;
+  --accentColor: #7A8450;
+  --tooltipColor: #FAEBD7;
+  --fontSize: 22px;
+  --titleFontSize: 40px;
   --welcome: 'Welcome';
 }
 
 @media all {
+  * {
+    box-sizing: border-box;
+  }
+
   html,
   body {
     box-sizing: border-box;
-    position: absolute;
     height: 100vh;
-    width: 100%;
+    width: 100vw;
     margin: 0;
     padding: 0;
-    background-color: var(--backgroundSecond);
     color: var(--fontColor);
     font-family: "Poppins", sans-serif;
-    font-size: 20px;
-    overflow: hidden;
-  }
-
-  .container {
-    height: 100vh;
-    width: 100%;
-    margin: 0;
+    font-size: var(--fontSize);
+    overflow-x: hidden;
     overflow-y: scroll;
-    scroll-snap-type: mandatory;
-    scroll-snap-points-y: repeat(100vh);
-    scroll-snap-type: y mandatory;
-    scroll-behavior: smooth;
   }
 
-  .container section {
-    height: 100vh;
-    width: 100%;
+  header.welcome {
     box-sizing: border-box;
+    height: fit-content;
+    width: 100vw;
+    padding: 20px;
+    margin: 0;
+    background-color: var(--accentColor);
+    color: var(--backgroundColor);
     display: flex;
     justify-content: center;
     align-items: center;
-    scroll-snap-align: start;
+    text-align: center;
   }
 
-  section.welcome {
-    color: white;
-    background-color: var(--backgroundColor);
+  header.welcome div h6 {
+    margin: 0;
     text-transform: uppercase;
   }
 
-  section.welcome div {
+  nav.navbar {
+    box-sizing: border-box;
+    height: fit-content;
+    width: 100vw;
+    background-color: var(--backgroundColor);
+    color: var(--backgroundSecond);
+    padding: 20px;
+    margin: 0;
+  }
+
+  nav.navbar > div {
+    box-sizing: border-box;
+    height: 100%;
+    width: 100%;
     display: flex;
-    height: 100vh;
-    width: 100%;
-    position: relative;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    text-align: center;
   }
 
-  hr.vertical {
-    height: 50%;
-    border: 0;
-    display: block;
-    align-self: center;
-    border-left: solid 1px var(--accentColor);
+  nav.navbar h4,
+  nav.navbar h3 {
+    margin: 10px 0;
   }
 
-  section.welcome .glitch  {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-size: 120px;
-    letter-spacing: 8px;
+  nav.navbar h4:hover {
+    text-decoration: underline;
   }
 
-  .glitch::before, .glitch::after {
-    content: var(--welcome);
-    display: block;
-    position: absolute;
-    top: 0;
-    left: 0;
-  }
-
-  .glitch::before {
-    animation: glitch 0.3s linear 6;
-    animation-iteration-count: infinite;
-    color: #e91e63;
-    z-index: -2;
-  }
-
-  .glitch::after {
-    animation: glitch 0.3s linear 6 reverse;
-    animation-iteration-count: infinite;
-    color: #2196f3;
-    z-index: -1;
-  }
-
-  @keyframes glitch {
-    0% {
-      top: 0;
-      left: 0;
-    }
-    20% {
-      top: -5px;
-      left: -5px;
-    }
-    40% {
-      top: 5px;
-      left: 5px;
-    }    
-    60% {
-      top: -5px;
-      left: 5px;
-    }    
-    80% {
-      top: 5px;
-      left: -5px;
-    }
-    100% {
-      top: 0;
-      left: 0;
-    }
-  }
-
-  section.welcome .arrow {
-    width: 100%;
-    cursor: pointer;
-    color: var(--fontColor);
-    background-color: transparent;
-    border: none;
-    font-size: 30px;
-    position: absolute;
-    bottom: 0;
-    z-index: 2;
-  }
-
-  section.content {
-    overflow-y: scroll;
-    position: relative;
-    z-index: 3;
-  }
-
-  div.controlbar {
-    display: none;
-    position: fixed;
-    box-sizing: border-box;
-    height: 100vh;
-    width: 10%;
-    z-index: 1;
-    top: 0;
-    right: 0;
-    background-color: var(--accentColor);
-    overflow-x: hidden;
-    overflow-y: hidden;
-    padding: 60px;
-    transition: 0.5s;
-    border: none;
-    clip-path: polygon(100% 0, 100% 24%, 100% 29%, 100% 53%, 100% 58%, 100% 100%, 26% 100%, 0 81%, 0% 35%, 0 0);
-  }
-
-  .controlbar::before {
-    content: "";
-    position: absolute;
-    z-index: -1;
-    top: 1px;
-    left: 1px;
-    right: 1px;
-    bottom: 1px;
-    border: none;
-    background: rgb(38, 0, 46);
-    clip-path: polygon(100% 0, 100% 24%, 100% 29%, 100% 53%, 100% 58%, 100% 100%, 26% 100%, 0 81%, 0% 35%, 0 0);
- }
- 
- .border::after {
-    content: "";
-    position: absolute;
-    z-index: -1;
-    top: 15px;
-    left: 15px;
-    right: 15px;
-    bottom: 15px;
-    border: 5px solid #e0b1cb;
-    background: #fff;
- }
-
-  div.controlbar .closebtn {
-    cursor: pointer;
-    font-size: 20px;
-    color: var(--fontColor);
-    position: absolute;
-    top: 0;
-    right: 0;
-    margin: 10px;
-    border: none;
-    background-color: transparent;
-  }
-
-  .openbtn {
-    cursor: pointer;
-    font-size: 20px; 
-    color: var(--fontColor);
-    padding: 10px;
-    border: none;
-    background-color: transparent;
-    position: absolute;
-    top: 0;
-    right: 0;
-  }
-
-  div.topbar {
-    position: relative;
-    box-sizing: border-box;
-    height: 40%;
-    width: 40%;
-    margin-top: 100px;
-    background-color: transparent;
-  }
-
-  div.topbar img.pb {
-    position: relative;
-    height: 160px;
-    width: 160px;
-    margin: 5px;
+  nav.navbar div button.btn {
+    height: fit-content;
+    width: fit-content;
     padding: 5px;
-    border-bottom: solid 1px var(--accentColor);
-  }
-
-  .introText {
-    width: 50%;
-  }
-
-  .btn {
+    margin: 0 8px;
+    background-color: transparent;
+    border: 1px solid var(--backgroundSecond);
     cursor: pointer;
+    color: var(--backgroundSecond);
+    font-family: "Poppins", sans-serif;
+    font-size: 0.7em;
+  }
+
+  main {
     box-sizing: border-box;
-    height: min-content;
-    width: 90%;
-    padding: 4px;
-    margin: 10px;
-    background-color: var(--tooltipColor);
-    color: #111111;
-    position: absolute;
-    align-self: center;
-    border: 2px solid black;
-    clip-path: polygon(50% 0%, 100% 0, 100% 60%, 75% 100%, 25% 100%, 0% 60%, 0 0);
+    height: auto;
+    width: 100vw;
+    padding: 0;
+    margin: 0;
   }
 
-  .btn:hover {
-    transform: scale(1.05);
-  }
-
-  .row {
+  section.aboutMe {
+    box-sizing: border-box;
+    height: fit-content;
+    width: 100%;
+    padding: 20px;
+    margin: 0;
+    background-color: var(--backgroundSecond);
+    color: var(--backgroundColor);
     display: flex;
     flex-direction: row;
   }
 
-  .main.row {
+  section.aboutMe div.content,
+  section.aboutMe div.picture {
     box-sizing: border-box;
-    height: 100%;
-    width: 100%;
-    padding: 20px;
-    height: fit-content;
-  }
-
-  .column {
     display: flex;
     flex-direction: column;
-  }
-
-  .main.column {
-    box-sizing: border-box;
-    height: 100%;
-    width: 80%;
-    padding: 10px;
-    overflow-y: scroll;
-  }
-
-  .center {
-    text-align: center;
-    align-items: center;
     justify-content: center;
-  }
-
-  .row.center.p-text p {
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    height: auto;
     width: 50%;
   }
 
-  .p-5 {
-    padding: 5px;
+  section.aboutMe div.content {
+    justify-content: space-evenly !important;
   }
 
-  .p-10 {
-    padding: 10px;
+  section.aboutMe div.content h1 {
+    margin: 0;
   }
 
-  .p-text {
-    padding: 0 20px 0 20px;
+  section.aboutMe div.content div.text {
+    box-sizing: border-box;
+    width: 70%;
   }
 
-  .m-15 {
-    margin: 15px;
+  section.aboutMe div.content .defaultImg.git {
+    height: 50px;
+    width: 50px;
   }
 
-  .defaultImg {
+  section.aboutMe div.picture img {
+    border: 10px double var(--backgroundColor);
+  }
+
+  section.skillOverview {
+    box-sizing: border-box;
+    height: auto;
+    width: 100vw;
+    padding: 20px;
+    background-color: var(--backgroundColor);
+    display: flex;
+    flex-direction: row;
+  }
+
+  section.skillOverview div.title {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    background-color: var(--backgroundSecond);
+    width: calc(100% / 3);
+    height: auto;
+  }
+
+  section.skillOverview div.title h1 {
+    margin: 0;
+    font-size: 2em;
+    color: var(--backgroundColor);
+    letter-spacing: 0.25em;
+  }
+
+  section.skillOverview div.content {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: calc(100% / 3);
+    height: auto;
+  }
+
+  section.skillOverview div.content div {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    height: 100%;
+    width: 100%;
+  }
+
+  section.skillOverview div.tooltip {
+    display: flex;
+    align-items: center;
+  }
+
+  section.skillOverview img.defaultImg {
+    height: 40px;
+    width: 40px;
+    margin: 5px;
+  }
+
+  section.projects {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+    padding: 20px;
+    height: auto;
+    width: 100vw;
+    background-color: var(--backgroundSecond);
+  }
+
+  section.projects div.title h1 {
+    margin: 0;
+    margin-bottom: 20px;
+    color: var(--backgroundColor);
+  }
+
+  section.projects .slideshow-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    position: relative;
+  }
+
+  section.projects .mySlides {
+    display: none;
+  }
+
+  section.projects .mySlides {
+    background-color: var(--accentColor);
+    width: 40%;
+    height: auto;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+
+  section.projects .mySlides a {
+    color: var(--backgroundColor) !important;
+    text-decoration: none;
+  }
+
+  section.projects .mySlides a div.border {
+    margin: 20px;
+    padding: 40px 20px;
+    border: 1px solid var(--tooltipColor);
+  }
+
+  section.projects .mySlides hr {
+    border-top: 1px solid var(--backgroundColor) !important;
+  }
+
+  section.projects .mySlides div.text {
+    padding: 10px 40px;
+  }
+
+  section.projects .mySlides:hover {
+    transform: scale(1.025);
+  }
+
+  section.projects div.lang {
+    margin-top: 20px;
+  }
+
+  section.projects div.lang .defaultImg {
     height: 24px;
     width: 24px;
     margin: 0 4px 4px 4px;
   }
 
-  .defaultImg.git {
-    height: 34px;
-    width: 34px;
-  }
-
-  h1 {
-    text-transform: uppercase;
-    border-bottom: solid 1px var(--accentColor);
-    margin: 14px;
-  }
-
-  h3 {
-    margin: 0;
-  }
-
-  hr {
-    width: 80%;
-    border: 0;
-    border-top: solid 1px #e5e5e5ee;
-  }
-
-  p {
-    margin: 0 10px 0 10px;
-  }
-
-  div.tooltip {
-    position: relative;
-    color: #111111;
-    font-size: 18px;
-  }
-
-  div.tooltip::after {
-    content: attr(data-tooltip);
-    position: absolute;
-    top: 100%;
-    left: 5%;
-    background: var(--tooltipColor);
-    padding: 5px 10px;
-    white-space: nowrap;
-    opacity: 0;
-    transition : all 0.2s ease;
-    clip-path: polygon(50% 0%, 100% 0, 100% 60%, 75% 100%, 25% 100%, 0 100%, 0 0);
-  }
-
-  div.tooltip::before {
-    content: "";
-    position: absolute;
-    width: 20px;
-    height: 0;
-    border-bottom: 20px solid var(--tooltipColor);
-    border-left: 5px solid transparent;
-    border-right: 5px solid transparent;
-    transition : all 0.2s ease;
-    opacity: 0;
-    left: 10%;
-    top: 88%;
-  }
-
-  div.tooltip:hover:after, div:hover:before {
-    opacity: 1;
-  }
-
-  .bigCard {
-    display: flex;
-    box-sizing: border-box;
-    height: 100%;
-    width: 75%;
-    margin: 10px;
-    padding: 10px;
-    position: relative;
-    justify-content: center;
-    background-color: transparent;
-    clip-path: polygon(100% 0, 100% 24%, 100% 29%, 100% 53%, 100% 58%, 100% 100%, 26% 100%, 0 81%, 0% 35%, 0 0);
-  }
-
-  .bigCard.projects {
-    clip-path: none;
-  }
-
-  .bigCard::before {
-    box-sizing: border-box;
-    display: block;
-    content: "";
-    width: 250px;
-    height: 250px;
-    position: absolute;
-    margin: 5px;
-    top: 5px;
-    left: 5px;
-    border-top: 1px solid var(--accentColor);
-    border-left: 1px solid #e91e63;
-  }
-
-  .bigCard.skillOverview::before {
-    height: 100px;
-  }
-
-  .bigCard.skillOverview::after {
-    height: 100px;
-  }
-  
-  .bigCard::after {
-      box-sizing: border-box;
-      display: block;
-      content: "";
-      width: 250px;
-      height: 250px;
-      position: absolute;
-      bottom: 5px;
-      right: 5px;
-      border-bottom: 1px solid var(--accentColor);
-      border-right: 1px solid var(--accentColor);
-  }
-
-  div.row.p-30 > a {
-    color: var(--fontColor);
-    text-decoration: none;
-  }
-
-  .aboutMe {
-    position: relative;
-    z-index: 1;
-  }
-
-  .skills {
-    box-sizing: border-box;
-    padding: 5px;
-    position: relative;
-    z-index: 1;
-  }
-
-  .projects {
-    box-sizing: border-box;
-  }
-
-  .cards {
-    box-sizing: border-box;
-    height: 100%;
+  section.projects div.controls {
     width: 100%;
-    display: flex;
-    flex-wrap: wrap;
-    padding: 5px;
-    overflow-x: hidden;
-    overflow-y: auto;
-    position: relative;
-    z-index: 1;
-  }
-
-  .card {
-    box-sizing: border-box;
-    height: 100px;
-    width: 50%;
-    background-color: transparent;
-    margin: 0 10px 0 10px;
-    text-align: start;
-    overflow-y: hidden;
-    overflow-x: hidden;
-  }
-
-  a.card:hover {
-    cursor: pointer;
-    border: 1px var(--accentColor) solid;
-  }
-
-  .text {
-    font-size: 14px;
-  }
-
-  .title {
     display: flex;
     justify-content: space-between;
-    width: 100%;
-    flex-wrap: wrap;
+    position: absolute;
   }
 
-  .date {
-    color: var(--dateColor);
-    text-align: end;
+  section.projects div.controls .prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    margin-top: -22px;
+    padding: 16px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
   }
 
-  .lang {
-    box-sizing: border-box;
-    height: 20%;
-    display: flex;
-    justify-content: center;
-    border-right: solid 1px var(--accentColor);
-    margin-right: 4px;
+  section.projects div.controls .next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
   }
 
-  a {
-    color: var(--fontColor);
-    text-decoration: none;
-  }
-}
-
-@media (max-width: 450px) {
-  .bigCard::before {
-    margin: 0;
-    left: 0;
-    width: 100% !important;
-    border-left: none;
+  section.projects div.controls .prev:hover,
+  section.projects div.controls .next:hover {
+    background-color: #FFE9EC82;
   }
 
-  .bigCard::after {
-    border: none;
+  .numbertext {
+    color: #f2f2f2;
+    font-size: 12px;
+    padding: 8px 12px;
+    position: absolute;
+    top: 0;
   }
 
-  .title {
-    word-break: word-break;
+  section.projects .dot {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
   }
 
-  div.tooltip::before {
-    display: none;
+  section.projects .active, .dot:hover {
+    background-color: #717171;
   }
 
-  div.tooltip::after {
-    display: none;
-  }
-}
-
-@media (max-width: 700px) {
-  .bigCard::before {
-    height: 100px;
-    width: 100px;
+  .fade {
+    animation-name: fade;
+    animation-duration: 1.5s;
   }
 
-  .bigCard::after {
-    height: 100px;
-    width: 100px;
-  }
-
-  div.controlbar {
-    height: 10%;
-    width: 100%;
-    align-items: center;
-  }
-
-  div.topbar img.pb {
-    height: 100px;
-    width: 40vw;
-  }
-
-  .card {
-    width: 100%;
-    height: fit-content;
-  }
-}
-
-@media (max-width: 800px) {
-  section.welcome .glitch {
-    font-size: 10vw;
-  }
-}
-
-@media (min-width: 1000px) {
-  .bigCard {
-    height: 100% !important;
-    width: 100% !important;
+  @keyframes fade {
+    from {opacity: .4}
+    to {opacity: 1}
   }
 }

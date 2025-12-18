@@ -1,0 +1,81 @@
+:root {
+    --yellow: #FCDFA6;
+    --pink: #FFE4FA;
+    --blue: #A9E4EF;
+    --violet: #6A66A3;
+    --green: #84B082;
+    --orange: #F1BB87;
+  }
+
+@media all {
+    .yellow {
+        background-color: var(--yellow);
+    }
+
+    .pink {
+        background-color: var(--pink);
+    }
+
+    .blue {
+        background-color: var(--blue);
+    }
+
+    .violet {
+        background-color: var(--violet);
+    }
+
+    .green {
+        background-color: var(--green);
+    }
+
+    .orange {
+        background-color: var(--orange);
+    }
+
+    .d-flex {
+      display: flex;
+    }
+
+  .center {
+      text-align: center;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .p-5 {
+      padding: 5px;
+    }
+  
+    .p-10 {
+      padding: 10px;
+    }
+  
+    .p-text {
+      padding: 0 20px 0 20px;
+    }
+  
+    .m-15 {
+      margin: 15px;
+    }
+
+    h1 {
+      text-transform: uppercase;
+/*         border-bottom: solid 1px var(--accentColor);*/
+      margin: 14px;
+    }
+  
+    h3 {
+      margin: 0;
+    }
+  
+    hr {
+      width: 80%;
+      border: 0;
+      border-top: solid 1px #e5e5e5ee;
+    }
+  
+    p {
+      margin: 10px;
+      font-size: 20px;
+    }
+}
