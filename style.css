@@ -58,6 +58,10 @@
     margin: 0;
   }
 
+  nav.navbar div.mobileNav {
+    display: none;
+  }
+
   nav.navbar > div {
     box-sizing: border-box;
     height: 100%;
@@ -89,6 +93,15 @@
     color: var(--backgroundSecond);
     font-family: "Poppins", sans-serif;
     font-size: 0.7em;
+  }
+
+  nav.navbar div button.navButton {
+    display: none;
+    border: none;
+    background-color: transparent;
+    color: var(--backgroundSecond);
+    font-size: large;
+    cursor: pointer;
   }
 
   main {
@@ -342,5 +355,52 @@
   @keyframes fade {
     from {opacity: .4}
     to {opacity: 1}
+  }
+}
+
+@media (max-width: 1199px) {
+  nav.navbar div.mobileNav {
+    height: auto;
+    width: 100%;
+  }
+
+  nav.navbar div {
+    justify-content: space-between;
+  }
+
+  nav.navbar div.fullNav h4, nav.navbar div.fullNav button.btn {
+    display: none;
+  }
+
+  nav.navbar div button.navButton {
+    position: relative;
+    display: inline-flex;
+  }
+
+  section.aboutMe {
+    flex-direction: column-reverse !important;
+  }
+
+  section.aboutMe div.content,
+  section.aboutMe div.picture {
+    width: 100% !important;
+  }
+
+  section.aboutMe div.picture img {
+    width: 50% !important;
+  }
+
+  section.skillOverview {
+    flex-direction: column !important;
+    justify-content: center;
+  }
+
+  section.skillOverview div.content,
+  section.skillOverview div.title {
+    width: 100%;
+  }
+
+  section.projects .mySlides {
+    width: 100%;
   }
 }

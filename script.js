@@ -58,6 +58,17 @@ function closeBar() {
   document.getElementById("openbtn").style.display = "block";
 }
 
+let navbarOpen = false;
+function openNav() {
+  if (navbarOpen == false) {
+    document.getElementById('mobileNav').style.display = "block";
+    navbarOpen = true;
+  } else if (navbarOpen == true) {
+    document.getElementById('mobileNav').style.display = "none";
+    navbarOpen = false;
+  }
+}
+
 let slideIndex = 1;
 
 window.addEventListener('load', () => {
