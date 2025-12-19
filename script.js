@@ -8,12 +8,18 @@ function switchLang() {
 
   if (language == "german") {
     document.getElementById("welcomeBg").textContent = "Willkommen auf meinem Portfolio";
-    welcomeText = 'Wilkommen';
-    document.documentElement.style.setProperty('--welcome', '"' + welcomeText + '"');
+    if (document.getElementById('mobileNav').checkVisibility()) {
+      document.getElementById("aboutMeNavMobile").textContent = "Über mich";
+      document.getElementById("skillsNavMobile").textContent = "Meine Fähigkeiten";
+      document.getElementById("projectsNavMobile").textContent = "Projekte";
+    }
+    document.getElementById("aboutMeNav").textContent = "Über mich";
     document.getElementById("aboutMe").textContent = "Über mich";
     document.getElementById("intro").textContent =
-      "Hallo, mein Name ist Sophia. Ich mache gerade eine Ausbildung zur Fachinformatikerin. Im Moment lerne ich Python, Java und GDscript.";
+      "Hi, ich bin Sophia. Ich mache eine Ausbildung zur Fachinformatikerin für Anwendungsentwicklung. Momentan lerne ich mehr über Python Flask, Java und Go.";
+    document.getElementById("skillsNav").textContent = "Meine Fähigkeiten";
     document.getElementById("skills").textContent = "Meine Fähigkeiten";
+    document.getElementById("projectsNav").textContent = "Projekte";
     document.getElementById("projects").textContent = "Projekte";
     document.getElementById("descSprite").textContent =
       "Ein einfaches 2D-Jump 'n' Run-Spiel um Godot zu lernen.";
@@ -24,14 +30,21 @@ function switchLang() {
     document.getElementById("descSW").textContent = "Stoppuhr in JavaScript";
     document.getElementById("descKaplan").textContent =
       "Ein einfaches Adressbuch in Python mit customtkinter GUI.";
+    document.getElementById("descNotus").textContent = "Eine Wetter-App in Python Flask.";
   } else if (language == "english") {
     document.getElementById("welcomeBg").textContent = "Welcome to my Portfolio";
-    welcomeText = 'Welcome';
-    document.documentElement.style.setProperty('--welcome', '"' + welcomeText + '"');
+    if (document.getElementById('mobileNav').checkVisibility()) {
+      document.getElementById("aboutMeNavMobile").textContent = "About me";
+      document.getElementById("skillsNavMobile").textContent = "My Skills";
+      document.getElementById("projectsNavMobile").textContent = "Projects";
+    }
+    document.getElementById("aboutMeNav").textContent = "About me";
     document.getElementById("aboutMe").textContent = "About me";
     document.getElementById("intro").textContent =
-      "Hi, my name is Sophia. I'm currently training to be an IT specialist. At the moment i'm learning Python, Java and GDscript.";
+      "Hi, I'm Sophia. I'm training to become an IT specialist for software development. Right now, I'm learning more about Python Flask, Java, and Go.";
+    document.getElementById("skillsNav").textContent = "My Skills";
     document.getElementById("skills").textContent = "My Skills";
+    document.getElementById("projectsNav").textContent = "Projects";
     document.getElementById("projects").textContent = "Projects";
     document.getElementById("descSprite").textContent =
       "A simple 2D Jump 'n' Run game to explore Godot.";
@@ -41,6 +54,8 @@ function switchLang() {
     document.getElementById("descSW").textContent = "Stopwatch in JavaScript";
     document.getElementById("descKaplan").textContent =
       "A simple Address Book in python with customtkinter GUI.";
+    document.getElementById("descNotus").textContent =
+      "A weather app using Python Flask.";
   }
 }
 

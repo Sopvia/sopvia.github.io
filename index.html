@@ -23,18 +23,28 @@
 
         <nav class="navbar">
             <div class="fullNav">
-                <h4 id="AboutMeNav">About me</h4>
-                <h4 id="skillsNav">Skills</h4>
-                <h3>Sopvia</h3>
-                <h4 id="projectsNav">Projects</h4>
-                <button class="btn" id="langBtn" onclick="switchLang()">De/En</button>
+                <div class="content">
+                    <div>
+                        <h4 id="aboutMeNav">About me</h4>
+                        <h4 id="skillsNav">Skills</h4>
+                    </div>
+                </div>
+                <div class="content logo">
+                    <h3>Sopvia</h3>
+                </div>
+                <div class="content">
+                    <div>
+                        <h4 id="projectsNav">Projects</h4>
+                        <button class="btn" id="langBtn" onclick="switchLang()">De/En</button>
+                    </div>
+                </div>
                 <button class="navButton" onclick="openNav()">&#9776;</button>
             </div>
 
             <div id="mobileNav" class="mobileNav">
-                <h4 id="AboutMeNav">About me</h4>
-                <h4 id="skillsNav">Skills</h4>
-                <h4 id="projectsNav">Projects</h4>
+                <h4 id="aboutMeNavMobile">About me</h4>
+                <h4 id="skillsNavMobile">Skills</h4>
+                <h4 id="projectsNavMobile">Projects</h4>
                 <button class="btn" id="langBtn" onclick="switchLang()">De/En</button>
             </div>
         </nav>
@@ -44,7 +54,7 @@
                 <div class="content">
                     <h1 id="aboutMe" class="">About me</h1>
                     <div class="text">
-                        <p id="intro">Hi, my name is Sophia. I'm currently training to be an IT specialist. At the moment i'm learning Python, Java and GDscript.</p>
+                        <p id="intro">Hi, I'm Sophia. I'm training to become an IT specialist for software development. Right now, I'm learning more about Python Flask, Java, and Go.</p>
                     </div>
 
                     <a href="https://github.com/Sopvia" target="_blank">
@@ -65,6 +75,9 @@
                         </div>
                         <div class="tooltip" data-tooltip="CSS">
                             <img src="img/css.png" alt="CSS Logo" class="defaultImg">
+                        </div>
+                        <div class="tooltip" data-tooltip="PHP">
+                            <img src="img/php.png" alt="PHP Logo" class="defaultImg">
                         </div>
                     </div>
                 </div>
@@ -91,6 +104,26 @@
                     </div>
 
                     <div class="slideshow-container content">
+                        <div class="mySlides fade">
+                            <a class="" href="https://github.com/Sopvia/Notus" target="_blank">
+                                <div class="border">
+                                    <div class="">
+                                        <div class="title">
+                                            <h3>Notus</h3>
+                                            <span class="date">16/12/2025</span>
+                                        </div>
+                                    </div>
+                                    <hr>
+                                    <div class="text">
+                                        <span id="descNotus" class="desc">A weather app using Python Flask.</span>    
+                                    </div>
+                                    <div class="lang">
+                                        <img src="img/python.png" alt="Python Logo" class="defaultImg">
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+
                         <div class="mySlides fade">
                             <a class="" href="https://github.com/Sopvia/Kaplan" target="_blank">
                                 <div class="border">

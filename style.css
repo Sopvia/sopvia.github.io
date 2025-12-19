@@ -50,12 +50,14 @@
 
   nav.navbar {
     box-sizing: border-box;
-    height: fit-content;
+    height: auto;
     width: 100vw;
     background-color: var(--backgroundColor);
     color: var(--backgroundSecond);
     padding: 20px;
     margin: 0;
+    display: flex;
+    flex-direction: row;
   }
 
   nav.navbar div.mobileNav {
@@ -73,6 +75,25 @@
     text-align: center;
   }
 
+  nav.navbar > div.fullNav div.content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: calc(100% / 3);
+    height: auto;
+  }
+
+  nav.navbar > div.fullNav div.content > div {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    height: 100%;
+    width: 100%;
+  }
+
   nav.navbar h4,
   nav.navbar h3 {
     margin: 10px 0;
@@ -86,7 +107,7 @@
     height: fit-content;
     width: fit-content;
     padding: 5px;
-    margin: 0 8px;
+    margin: 0;
     background-color: transparent;
     border: 1px solid var(--backgroundSecond);
     cursor: pointer;
@@ -148,6 +169,10 @@
   section.aboutMe div.content div.text {
     box-sizing: border-box;
     width: 70%;
+  }
+
+  section.aboutMe div.content div.text p {
+    overflow-wrap: break-word;
   }
 
   section.aboutMe div.content .defaultImg.git {
@@ -364,12 +389,22 @@
     width: 100%;
   }
 
-  nav.navbar div {
-    justify-content: space-between;
+  nav.navbar div div.content.logo {
+    width: 100%;
+    margin-left: 12px;
   }
 
   nav.navbar div.fullNav h4, nav.navbar div.fullNav button.btn {
     display: none;
+  }
+
+  nav.navbar {
+    display: flex;
+    flex-direction: column;
+  }
+
+  nav.navbar > div {
+    justify-content: center;
   }
 
   nav.navbar div button.navButton {
@@ -384,6 +419,7 @@
   section.aboutMe div.content,
   section.aboutMe div.picture {
     width: 100% !important;
+    padding: 0 !important;
   }
 
   section.aboutMe div.picture img {
@@ -398,6 +434,11 @@
   section.skillOverview div.content,
   section.skillOverview div.title {
     width: 100%;
+  }
+
+  section.skillOverview div.title h1 {
+    letter-spacing: unset;
+    overflow-wrap: break-word;
   }
 
   section.projects .mySlides {
