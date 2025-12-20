@@ -27,6 +27,7 @@
     font-size: var(--fontSize);
     overflow-x: hidden;
     overflow-y: scroll;
+    scroll-behavior: smooth;
   }
 
   header.welcome {
@@ -99,7 +100,12 @@
     margin: 10px 0;
   }
 
-  nav.navbar h4:hover {
+  nav.navbar a {
+    color: var(--backgroundSecond);
+    text-decoration: none;
+  }
+
+  nav.navbar a:hover {
     text-decoration: underline;
   }
 
@@ -116,12 +122,16 @@
     font-size: 0.7em;
   }
 
+  nav.navbar div button.btn:hover {
+    transform: scale(1.05);
+  }
+
   nav.navbar div button.navButton {
     display: none;
     border: none;
     background-color: transparent;
     color: var(--backgroundSecond);
-    font-size: large;
+    font-size: 20px;
     cursor: pointer;
   }
 
@@ -275,9 +285,10 @@
 
   section.projects .mySlides {
     background-color: var(--accentColor);
-    width: 40%;
-    height: auto;
-    padding: 20px;
+    box-shadow: rgba(0, 0, 0, 0.44) 0px 4px 12px;
+    width: 30%;
+    height: 40%;
+    padding: 40px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -289,10 +300,14 @@
     text-decoration: none;
   }
 
-  section.projects .mySlides a div.border {
-    margin: 20px;
-    padding: 40px 20px;
+  section.projects .mySlides div.border {
+    height: 100%;
+    width: 100%;
+    padding: 40px;
     border: 1px solid var(--tooltipColor);
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
   section.projects .mySlides hr {
@@ -394,7 +409,7 @@
     margin-left: 12px;
   }
 
-  nav.navbar div.fullNav h4, nav.navbar div.fullNav button.btn {
+  nav.navbar div.fullNav a, nav.navbar div.fullNav button.btn {
     display: none;
   }
 
