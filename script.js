@@ -31,6 +31,8 @@ function switchLang() {
     document.getElementById("descKaplan").textContent =
       "Ein einfaches Adressbuch in Python mit customtkinter GUI.";
     document.getElementById("descNotus").textContent = "Eine Wetter-App in Python Flask.";
+    document.getElementById("descPokedex").textContent = "Ein Web-Pokedex in Python mit Hilfe von Flask.";
+    document.getElementById("descWok").textContent = "Ein Vokabeltrainer in PHP, HTML und JavaScript.";
   } else if (language == "english") {
     document.getElementById("welcomeBg").textContent = "Welcome to my Portfolio";
     if (document.getElementById('mobileNav').checkVisibility()) {
@@ -56,6 +58,8 @@ function switchLang() {
       "A simple Address Book in python with customtkinter GUI.";
     document.getElementById("descNotus").textContent =
       "A weather app using Python Flask.";
+    document.getElementById("descPokedex").textContent = "A Web-Pokedex in Python using Flask.";
+    document.getElementById("descWok").textContent = "A vocabulary trainer with PHP, HTML and JavaScript.";
   }
 }
 
